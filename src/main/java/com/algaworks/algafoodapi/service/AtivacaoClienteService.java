@@ -1,13 +1,15 @@
 package com.algaworks.algafoodapi.service;
 
 import com.algaworks.algafoodapi.modelo.Cliente;
-import com.algaworks.algafoodapi.notificacao.Notificador;
+import com.algaworks.algafoodapi.notificacao.NotificadorEmail;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
+@Component
 @RequiredArgsConstructor
 public class AtivacaoClienteService {
 
-    private final Notificador notificador;
+    private final NotificadorEmail notificador;
     public void ativar(Cliente cliente) {
         cliente.ativar();
 
