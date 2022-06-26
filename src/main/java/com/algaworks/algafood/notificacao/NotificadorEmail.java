@@ -1,6 +1,6 @@
-package com.algaworks.algafoodapi.notificacao;
+package com.algaworks.algafood.notificacao;
 
-import com.algaworks.algafoodapi.modelo.Cliente;
+import com.algaworks.algafood.modelo.Cliente;
 import org.springframework.stereotype.Component;
 
 @Component

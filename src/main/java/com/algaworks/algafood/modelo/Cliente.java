@@ -1,4 +1,4 @@
-package com.algaworks.algafoodapi.modelo;
+package com.algaworks.algafood.modelo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
