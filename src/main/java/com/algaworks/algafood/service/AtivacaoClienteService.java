@@ -5,22 +5,17 @@ import com.algaworks.algafood.notificacao.Notificador;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class AtivacaoClienteService {
 
-//  Notificador não precisa ser totalmente obrigatório.
-//  Caso não tenha uma instância, ele será declarado como null e poderá
-//      ser feito desta maneira abaixo.
-    @Autowired(required = false)
-    private Notificador notificador;
+    @Autowired
+    private List<Notificador> notificadores;
 
     public void ativar(Cliente cliente) {
         cliente.ativar();
-
-        if (notificador != null) {
+        for(Notificador notificador : notificadores)
             notificador.notificar(cliente, "Seu cadastro no sistema está ativo!");
-        } else {
-            System.out.println("Não existe um notificador, mas cliente foi ativado.");
-        }
     }
 }

@@ -4,10 +4,10 @@ import com.algaworks.algafood.modelo.Cliente;
 import org.springframework.stereotype.Component;
 
 @Component
-public class NotificadorEmail implements Notificador{
+public class NotificadorSMS implements Notificador{
 
     public void notificar(Cliente cliente, String msg) {
-        System.out.printf("Notificando %s através do e-mail %s: %s\n",
-                cliente.getNome(), cliente.getEmail(), msg);
+        System.out.printf("Notificando %s por SMS através do telefone %s: %s\n",
+                cliente.getNome(), cliente.getTelefone(), msg);
     }
 }
