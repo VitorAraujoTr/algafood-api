@@ -31,13 +31,13 @@ public class Restaurante {
     @Column(name = "ID")
     private Long id;
 
-    @Column(name = "NOME")
+    @Column(name = "NOME", nullable = false)
     private String nome;
 
-    @Column(name = "TAXA_FRETE")
+    @Column(name = "TAXA_FRETE", nullable = false)
     private BigDecimal taxaFrete;
 
     @ManyToOne
-    @JoinColumn(name = "COZINHA_ID")
+    @JoinColumn(name = "COZINHA_ID", nullable = false)
     private Cozinha cozinha;
 }
