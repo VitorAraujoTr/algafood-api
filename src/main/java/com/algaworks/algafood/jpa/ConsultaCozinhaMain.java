@@ -15,9 +15,9 @@ public class ConsultaCozinhaMain {
 
         CadastroCozinha cadastroCozinha = applicationContext.getBean(CadastroCozinha.class);
 
-        Cozinha cozinha = Cozinha.builder().id(1L).nome("Brasileira").build();
+        Cozinha cozinha = Cozinha.builder().id(1L).build();
 
-        cadastroCozinha.salvar(cozinha);
+        cadastroCozinha.remover(cozinha);
     }
 
 }
