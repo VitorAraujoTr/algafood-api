@@ -16,13 +16,13 @@ public class CozinhaRepositoryImpl implements CozinhaRepository {
     private EntityManager em;
 
     @Override
-    public List<Cozinha> todas() {
+    public List<Cozinha> listar() {
         return em.createQuery("from Cozinha", Cozinha.class)
                 .getResultList();
     }
 
     @Override
-    public Cozinha porId(Long id) {
+    public Cozinha buscarPorId(Long id) {
         return em.find(Cozinha.class, id);
     }
 
@@ -36,7 +36,7 @@ public class CozinhaRepositoryImpl implements CozinhaRepository {
     @Override
     public void remover(Cozinha cozinha) {
 
-        cozinha = porId(cozinha.getId());
+        cozinha = buscarPorId(cozinha.getId());
 
         em.remove(cozinha);
     }
