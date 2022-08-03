@@ -2,12 +2,14 @@ package com.algaworks.algafood.infraestructore.repository;
 
 import com.algaworks.algafood.domain.model.FormaPagamento;
 import com.algaworks.algafood.domain.repository.FormaPagamentoRepository;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
+@Component
 public class FormaPagamentoRepositoryImpl implements FormaPagamentoRepository {
 
     @PersistenceContext
