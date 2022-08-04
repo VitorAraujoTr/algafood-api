@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.algaworks</groupId>
     <artifactId>algafood-api</artifactId>
-    <version>4.14.0-SNAPSHOT</version>
+    <version>4.14.1-SNAPSHOT</version>
     <name>algafood-api</name>
     <description>algafood-api</description>
     <properties>
@@ -50,6 +50,10 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
         </dependency>
     </dependencies>
 
