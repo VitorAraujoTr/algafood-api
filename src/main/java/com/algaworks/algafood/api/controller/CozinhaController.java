@@ -22,7 +22,7 @@ public class CozinhaController {
         return cozinhaRepository.listar();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping(value = "/{id}")
     public Cozinha buscar(@PathVariable Long id) {
         return cozinhaRepository.buscarPorId(id);
     }
