@@ -10,14 +10,10 @@ import lombok.NonNull;
 import java.util.List;
 
 @JacksonXmlRootElement(localName = "cozinhas")
-// ou
-//@JsonRootName("cozinhas")
 @Data
 public class CozinhasXmlWrapper {
 
     @JsonProperty("cozinha")
-//    ou
-//    @JacksonXmlProperty(localName = "cozinha")
     @JacksonXmlElementWrapper(useWrapping = false)
     @NonNull
     private List<Cozinha> cozinhas;
