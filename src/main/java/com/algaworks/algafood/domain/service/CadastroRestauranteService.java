@@ -6,6 +6,7 @@ import com.algaworks.algafood.domain.model.Restaurante;
 import com.algaworks.algafood.domain.repository.CozinhaRepository;
 import com.algaworks.algafood.domain.repository.RestauranteRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -27,6 +28,18 @@ public class CadastroRestauranteService {
         restaurante.setCozinha(cozinha);
 
         return restauranteRepository.adicionar(restaurante);
+    }
+
+    public void excluir(Long idRestaurante) {
+        try {
+            restauranteRepository.remover(idRestaurante);
+
+        } catch (EmptyResultDataAccessException e) {
+            throw new EntidadeNaoEncontradaException(
+                    String.format("Não existe um cadastro de Restaurante com código %d.", idRestaurante));
+        }
+
+
     }
 
 

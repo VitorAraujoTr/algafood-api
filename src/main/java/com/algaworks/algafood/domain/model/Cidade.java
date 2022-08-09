@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
@@ -21,4 +23,8 @@ public class Cidade {
 
     @Column(nullable = false)
     private String nome;
+
+    @ManyToOne
+    @JoinColumn(name = "ESTADO_ID", nullable = false)
+    private Estado estado;
 }
