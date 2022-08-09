@@ -1,6 +1,5 @@
 package com.algaworks.algafood.api.controller;
 
-import com.algaworks.algafood.api.model.CozinhasXmlWrapper;
 import com.algaworks.algafood.domain.exception.EntidadeEmUsoException;
 import com.algaworks.algafood.domain.exception.EntidadeNaoEncontradaException;
 import com.algaworks.algafood.domain.model.Cozinha;
@@ -9,7 +8,6 @@ import com.algaworks.algafood.domain.service.CadastroCozinhaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,11 +32,6 @@ public class CozinhaController {
     @GetMapping
     public List<Cozinha> listar() {
         return cozinhaRepository.listar();
-    }
-
-    @GetMapping(produces = MediaType.APPLICATION_XML_VALUE)
-    public CozinhasXmlWrapper listarXml() {
-        return new CozinhasXmlWrapper(cozinhaRepository.listar());
     }
 
     @GetMapping(value = "/{id}")
@@ -66,7 +59,7 @@ public class CozinhaController {
 
             return ResponseEntity
                     .status(HttpStatus.CREATED)
-                    .body(cozinhaRepository.adicionar(cozinhaAtual));
+                    .body(cozinhaService.salvar(cozinhaAtual));
         }
         return ResponseEntity.notFound().build();
     }
